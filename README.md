@@ -12,3 +12,4 @@
     http://localhost:8802/api/v1/quote
 
 # Swagger
+    http://localhost:8080/swagger-ui.html
