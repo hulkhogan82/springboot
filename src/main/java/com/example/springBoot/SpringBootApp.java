@@ -18,6 +18,7 @@ public class SpringBootApp {
 		SpringApplication.run(SpringBootApp.class, args);
 	}
 
+	/*
 	@Bean
 	public CommandLineRunner demo(CustomerRepository repository) {
 		return (args) -> {
@@ -55,4 +56,5 @@ public class SpringBootApp {
 			log.info("");
 		};
 	}
+	 */
 }

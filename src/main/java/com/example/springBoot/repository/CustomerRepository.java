@@ -2,9 +2,12 @@ package com.example.springBoot.repository;
 
 import com.example.springBoot.entity.Customer;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@RepositoryRestResource
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
 
     List<Customer> findByLastName(String lastName);
