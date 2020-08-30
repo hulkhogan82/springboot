@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 import java.util.Optional;
 
-public interface FlightRepository extends JpaRepository<Flight, Integer> {
+public interface FlightDepartureRepository extends JpaRepository<Flight, String> {
 
     List<Flight> findByDestinationCode(String destinationCode);
 

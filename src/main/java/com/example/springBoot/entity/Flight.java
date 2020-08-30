@@ -3,19 +3,21 @@ package com.example.springBoot.entity;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 
 @Entity
-@Table(name = "FLIGHTS")
+@Table(name = "DEPARTURES")
 public class Flight extends AbstractPersistable<Integer> {
+
+    @Id
+    private String flightNumber;
     private String destination;
     private String destinationCode;
     private String airlineName;
     private String airlineCode;
-    private String flightNumber;
-    private LocalTime time;
+    private LocalTime departureTime;
     private String terminal;
     private boolean codeShare;
 
@@ -43,12 +45,12 @@ public class Flight extends AbstractPersistable<Integer> {
         this.flightNumber = flightNumber;
     }
 
-    public LocalTime getTime() {
-        return time;
+    public LocalTime getDepartureTime() {
+        return departureTime;
     }
 
-    public void setTime(LocalTime time) {
-        this.time = time;
+    public void setDepartureTime(LocalTime departureTime) {
+        this.departureTime = departureTime;
     }
 
     public String getTerminal() {
@@ -87,6 +89,6 @@ public class Flight extends AbstractPersistable<Integer> {
     public String toString() {
         return String.format(
                 "Flight [destination=%s, destinationCode=%s, airlineName=%s, airlineCode=%s, flightNumber=%s, time=%s, terminal=%s, codeShare=%s]",
-                destination, destinationCode, airlineName, airlineCode, flightNumber, time, terminal, codeShare);
+                destination, destinationCode, airlineName, airlineCode, flightNumber, departureTime, terminal, codeShare);
     }
 }
